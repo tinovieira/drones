@@ -1,0 +1,37 @@
+Java 1.8 is required
+
+——————-
+Dependencies:
+
+junit 4.12 (for tests)
+
+——————-
+Some remarks:
+
+Initially I thought the Drones were meant to adjust speed/bearing to reach a destination at given time, as in method Drone.runTimer().
+A simpler method of setting lat/lon at correct time was later thought of, most of the method/state of Drone can therefore be removed if starting thread by Drone.run()
+
+——————-
+Improvements:
+
+Queue of destinations in Drone (destinations) needs locking/synchronization.
+more...
+
+——————-
+Usage:
+
+($ mkdir bin)
+$ javac -d bin/ src/drones/*.java
+$ java -cp bin drones.TrafficDrones
+Sending initial destinations to drone 5937
+Sending initial destinations to drone 6043
+Drone 6043 is sending report from "Pimlico" to Dispatcher
+Dispatcher is reporting traffic: 6043, 08:01:43, 0.000000, LIGHT
+Drone 5937 is sending report from "Elephant & Castle" to Dispatcher
+Dispatcher is reporting traffic: 5937, 08:03:47, 0.000000, MODERATE
+...
+Shutting down at 08:10
+
+
+——————-
+Suggestions and feedback on code and how the problem could be solved are very welcome through pull request or issue
