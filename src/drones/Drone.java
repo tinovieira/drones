@@ -63,6 +63,7 @@ public class Drone extends Thread {
     /**
      * Start the thread (called by Thread.start())
      */
+    @SuppressWarnings("unchecked")
     public void runTimer() {
 
         LocalTime t0 = dispatcher.getTime();
